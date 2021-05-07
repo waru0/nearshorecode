@@ -1,8 +1,7 @@
 import helper from "../helpers/payments/helper";
 const fs = require( "fs" );
 
-const filename = "/Users/waru/Desktop/Exercise/data/payments.JSON";
-//let user = require(filename)
+const filename = "/Users/waru/Desktop/Exercise/backend/data/payments.JSON";
 var user = JSON.parse( fs.readFileSync( filename ) );
 
 const getPost = ( id ) =>
@@ -34,9 +33,7 @@ const insertPost = ( newUser ) =>
     {
         return "Email not found cannot accept";
 
-        // user.push(newUser)
-        // helper.writeJSONFile(filename, user)
-        // return (newUser)
+
     }
 };
 

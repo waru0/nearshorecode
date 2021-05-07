@@ -10,6 +10,7 @@ router.get( "/:email", async ( req, res ) =>
     try
     {
         const response = await data.getPost( email );
+
         return res.json( response );
     } catch ( err )
     {

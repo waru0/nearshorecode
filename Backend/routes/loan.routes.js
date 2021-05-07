@@ -23,13 +23,15 @@ router.get( "/loan/:id", async ( req, res ) =>
     }
 } );
 
-router.post( "/loan", async ( req, res ) =>
+router.post( "/", async ( req, res ) =>
 {
+    const email = req.body.email
+    const amount = parseInt( req.body.amount, 10 );
     try
     {
-        const response = await data.insertPost( req.body );
+        const response = await data.insertPost( { email, amount } );
         return res.status( 201 ).json( {
-            content: response,
+            response,
         } );
     } catch ( err )
     {

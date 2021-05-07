@@ -29,7 +29,7 @@ router.post( "/", async ( req, res ) =>
     return res
         .status( 201 )
         .json( {
-            content: response,
+            response,
         } )
         .catch( ( err ) => res.status( 500 ).json( { message: err.message } ) );
 } );

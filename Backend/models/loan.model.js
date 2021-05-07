@@ -1,7 +1,7 @@
 import helper from "../helpers/loan/helper";
 const fs = require( "fs" );
 
-const filename = "/Users/waru/Desktop/Exercise/data/loan.JSON";
+const filename = "/Users/waru/Desktop/Exercise/backend/data/loan.JSON";
 var user = JSON.parse( fs.readFileSync( filename ) );
 
 const getPost = ( id ) =>
@@ -23,7 +23,7 @@ const insertPost = ( newUser ) =>
             return `New Amount ${ total }`;
         } else
         {
-            return "error:100 AMount excedeed";
+            return "error:100 Amount excedeed";
         }
     } else
     {
@@ -34,7 +34,7 @@ const insertPost = ( newUser ) =>
         {
             user.push( newUser );
             helper.writeJSONFile( filename, user );
-            return `The User #${ newUser.id } has been created`, newUser;
+            return "The User created";
         }
     }
 };
